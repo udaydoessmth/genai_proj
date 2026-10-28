@@ -1,5 +1,5 @@
 # Wayfarer
-
+https://genai-proj-nfip.onrender.com/
 Wayfarer is a personalized travel-planning starter app: a React/Vite dashboard talks to a FastAPI service, which generates structured itineraries with Google Gemini and optionally stores them in Supabase.
 
 ## Architecture
