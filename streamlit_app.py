@@ -22,10 +22,10 @@ st.set_page_config(
 )
 
 # ─────────────────────────────────────────────────────────────────────
-# Custom CSS — premium earthy aesthetic matching original design
+# Custom CSS — bold minimal black & white editorial design
 # ─────────────────────────────────────────────────────────────────────
 st.markdown(
-    '<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">',
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">',
     unsafe_allow_html=True,
 )
 
@@ -33,137 +33,167 @@ st.markdown("""
 <style>
 /* ── Global ────────────────────────────────────────────────── */
 html, body, .stApp, .stApp * {
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 :root {
-    --ink: #27352e;
-    --muted: #8c958d;
-    --green: #526f59;
-    --green-dark: #3f5d48;
-    --line: #e9ebe6;
-    --paper: #fff;
-    --accent: #d98058;
-    --bg: #f7f8f5;
+    --ink: #000000;
+    --muted: #666666;
+    --line: #e5e5e5;
+    --line-bold: #000000;
+    --paper: #ffffff;
+    --accent: #000000;
+    --bg: #ffffff;
+    --bg-subtle: #f8f8f8;
 }
 #MainMenu, header, footer { visibility: hidden !important; }
-.stApp { background: var(--bg) !important; }
-.block-container { max-width: 1200px; padding: 2rem 2.5rem !important; }
+.stApp { background: #ffffff !important; color: #000000 !important; }
+.block-container { max-width: 1200px; padding: 2.2rem 2.5rem !important; }
 
 /* ── Sidebar ───────────────────────────────────────────────── */
 [data-testid="stSidebar"] {
-    background: #fbfcf9 !important;
-    border-right: 1px solid var(--line) !important;
+    background: #ffffff !important;
+    border-right: 1.5px solid #000000 !important;
 }
 [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
     font-size: 13px;
+    color: #444444;
 }
 .wf-brand {
     display: flex; align-items: center; gap: 10px;
-    margin: 0 0 30px 0; text-decoration: none; color: var(--ink);
-    font: 800 22px 'Manrope', sans-serif; letter-spacing: -1.1px;
+    margin: 0 0 30px 0; text-decoration: none; color: #000000;
+    font: 800 22px 'Space Grotesk', sans-serif; letter-spacing: -0.8px;
+    text-transform: uppercase;
 }
 .wf-brand-mark {
-    display: grid; width: 36px; height: 36px; place-items: center;
-    border-radius: 11px; background: #e6eee6; color: #496550;
-    font-size: 18px;
+    display: grid; width: 34px; height: 34px; place-items: center;
+    border-radius: 4px; background: #000000; color: #ffffff;
+    font-size: 17px;
 }
-.wf-brand-period { color: var(--accent); }
+.wf-brand-period { color: #000000; }
 .wf-sidebar-note {
     position: relative; overflow: hidden; margin: 20px 0;
-    border: 1px solid #e8ede5; border-radius: 11px;
-    background: #f4f7f1; padding: 16px 14px;
+    border: 1.5px solid #000000; border-radius: 6px;
+    background: #fafafa; padding: 16px 14px;
+    box-shadow: 3px 3px 0px #000000;
 }
-.wf-sidebar-note::after {
-    position: absolute; right: -26px; bottom: -44px;
-    width: 95px; height: 95px; border: 1px solid #e1e9de;
-    border-radius: 50%; content: "";
+.wf-note-title {
+    margin: 4px 0 4px; font: 700 12px 'Space Grotesk', sans-serif;
+    color: #000000; text-transform: uppercase; letter-spacing: 0.5px;
 }
-.wf-note-title { margin: 10px 0 4px; font: 700 13px 'Manrope', sans-serif; color: var(--ink); }
-.wf-note-copy { margin: 0; color: #879188; font-size: 11px; line-height: 1.65; }
+.wf-note-copy { margin: 0; color: #555555; font-size: 11px; line-height: 1.6; }
 .wf-user-bar {
     display: flex; align-items: center; gap: 10px;
-    border-top: 1px solid var(--line); padding: 16px 0 0; margin-top: 20px;
+    border-top: 1.5px solid #000000; padding: 16px 0 0; margin-top: 20px;
 }
 .wf-avatar {
     display: grid; width: 36px; height: 36px; flex: 0 0 auto;
-    place-items: center; border-radius: 50%;
-    background: #ecdfd2; color: #825e48;
-    font-size: 13px; font-weight: 700;
+    place-items: center; border-radius: 4px;
+    background: #000000; color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; font-weight: 800;
 }
 .wf-user-info { min-width: 0; }
-.wf-user-name { font-size: 12px; font-weight: 600; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wf-user-email { font-size: 10px; color: #9aa199; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wf-user-name { font-size: 12px; font-weight: 700; color: #000000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wf-user-email { font-size: 11px; color: #777777; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* ── Buttons ───────────────────────────────────────────────── */
 .stButton > button {
-    border-radius: 8px !important;
-    font-weight: 600 !important;
+    border-radius: 4px !important;
+    font-weight: 700 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
     font-size: 12px !important;
-    transition: all 0.16s !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    transition: all 0.15s ease !important;
 }
 div[data-testid="stFormSubmitButton"] > button,
 button[kind="primary"] {
-    background: var(--green) !important;
-    color: white !important;
-    border: none !important;
-    padding: 0.65rem 1.2rem !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1.5px solid #000000 !important;
+    padding: 0.7rem 1.4rem !important;
     font-size: 13px !important;
-    border-radius: 8px !important;
+    border-radius: 4px !important;
 }
 div[data-testid="stFormSubmitButton"] > button:hover,
 button[kind="primary"]:hover {
-    background: var(--green-dark) !important;
-    transform: translateY(-1px);
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+    box-shadow: 3px 3px 0px #000000 !important;
+    transform: translate(-1px, -1px);
 }
-/* Inputs */
+button[kind="secondary"] {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1.5px solid #000000 !important;
+}
+button[kind="secondary"]:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* ── Inputs ────────────────────────────────────────────────── */
 .stTextInput input, .stDateInput input, .stNumberInput input {
-    border: 1px solid #e8ebe5 !important;
-    border-radius: 7px !important;
+    border: 1.5px solid #000000 !important;
+    border-radius: 4px !important;
     font-size: 13px !important;
-    color: #37443a !important;
+    color: #000000 !important;
+    background: #ffffff !important;
 }
 .stTextInput input:focus, .stDateInput input:focus, .stNumberInput input:focus {
-    border-color: #9caf9c !important;
-    box-shadow: 0 0 0 3px rgba(143,169,146,0.12) !important;
+    border-color: #000000 !important;
+    box-shadow: 3px 3px 0px #000000 !important;
+    outline: none !important;
 }
-.stTextInput input::placeholder { color: #b5bbb4 !important; }
+.stTextInput input::placeholder { color: #888888 !important; }
 .stMultiSelect [data-baseweb="tag"] {
-    background: #eff4ed !important;
-    color: #58705a !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 3px !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important;
 }
-/* Tabs */
+
+/* ── Tabs ──────────────────────────────────────────────────── */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 4px;
-    border-bottom: 1px solid var(--line);
+    gap: 6px;
+    border-bottom: 2px solid #000000;
 }
 .stTabs [data-baseweb="tab"] {
-    border-radius: 6px 6px 0 0 !important;
-    font-size: 11px !important;
-    font-weight: 600 !important;
-    padding: 8px 14px !important;
-    color: #a1a89f !important;
+    border-radius: 4px 4px 0 0 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    padding: 8px 16px !important;
+    color: #737373 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
 }
 .stTabs [aria-selected="true"] {
-    background: #eff4ed !important;
-    color: #5c765f !important;
-    border-bottom: 2px solid var(--green) !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-bottom: none !important;
 }
-/* Radio (horizontal) */
+
+/* ── Radio (horizontal) ────────────────────────────────────── */
 .stRadio > div { gap: 0 !important; }
 .stRadio [role="radiogroup"] { gap: 6px !important; }
 .stRadio label {
-    border: 1px solid #eaede7 !important;
-    border-radius: 6px !important;
+    border: 1.5px solid #d4d4d4 !important;
+    border-radius: 4px !important;
     padding: 8px 14px !important;
-    font-size: 11px !important;
-    background: white !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
     transition: all 0.15s !important;
 }
 .stRadio label[data-checked="true"],
 .stRadio label:has(input:checked) {
-    border-color: #b9ccb9 !important;
-    background: #eff4ed !important;
-    color: #49634f !important;
+    border-color: #000000 !important;
+    background: #000000 !important;
+    color: #ffffff !important;
 }
 
 /* ── Auth Page ─────────────────────────────────────────────── */
@@ -173,240 +203,255 @@ button[kind="primary"]:hover {
 }
 .wf-auth-card {
     width: 100%; max-width: 440px;
-    border: 1px solid #e8ece5; border-radius: 14px;
-    background: rgba(255,255,255,0.96); padding: 34px 34px 26px;
-    box-shadow: 0 14px 46px rgba(37,54,40,0.07);
+    border: 2px solid #000000; border-radius: 8px;
+    background: #ffffff; padding: 34px 34px 26px;
+    box-shadow: 6px 6px 0px #000000;
 }
 .wf-auth-card h1 {
-    margin: 14px 0 6px; color: #28372e;
-    font: 700 26px 'Manrope', sans-serif; letter-spacing: -1.1px;
+    margin: 14px 0 6px; color: #000000;
+    font: 800 28px 'Space Grotesk', sans-serif; letter-spacing: -0.8px;
+    text-transform: uppercase;
 }
-.wf-auth-card p { color: #899389; font-size: 12px; line-height: 1.65; }
+.wf-auth-card p { color: #555555; font-size: 12px; line-height: 1.6; }
 .wf-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
-    color: #879388; font-size: 10px; font-weight: 700; letter-spacing: 1.55px;
+    color: #000000; font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .wf-eyebrow-line {
-    display: inline-block; width: 19px; height: 1px; background: #93a594;
+    display: inline-block; width: 22px; height: 2px; background: #000000;
 }
 
 /* ── Itinerary Cover ───────────────────────────────────────── */
 .wf-cover {
     position: relative; height: 190px; overflow: hidden;
-    border-radius: 12px 12px 0 0;
-    background: linear-gradient(180deg, #dce6e1 0%, #f1ddc4 68%, #e4c8a9 100%);
+    border-radius: 6px 6px 0 0;
+    background: #000000;
+    border-bottom: 2px solid #000000;
 }
-.wf-cover-sun {
-    position: absolute; top: 28px; right: 22%;
-    width: 65px; height: 65px; border-radius: 50%;
-    background: #f6edd6; box-shadow: 0 0 35px rgba(244,224,186,0.8);
+.wf-cover-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
 }
-.wf-cover-hill {
-    position: absolute; right: -10%; left: -10%;
-    height: 100px; border-radius: 48% 55% 0 0/45% 56% 0 0;
+.wf-cover-circle {
+    position: absolute; top: -30px; right: 12%;
+    width: 200px; height: 200px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
 }
-.wf-cover-hill-back { bottom: 35px; background: #b4c3b1; transform: rotate(-3deg); }
-.wf-cover-hill-front { bottom: 20px; height: 84px; background: #819b82; transform: rotate(3deg); }
-.wf-cover-water {
-    position: absolute; right: -5%; bottom: 0; left: -5%;
-    height: 40px; background: linear-gradient(180deg, #a1b7af, #c0c8b2); opacity: 0.84;
-}
+.wf-cover-sun, .wf-cover-hill, .wf-cover-water { display: none; }
 .wf-cover-label {
-    position: absolute; z-index: 2; bottom: 18px; left: 18px;
-    color: white; font: 700 22px 'Manrope', sans-serif;
-    letter-spacing: 2px; text-shadow: 0 1px 9px rgba(32,49,36,0.3);
-    text-transform: uppercase;
+    position: absolute; z-index: 2; bottom: 20px; left: 24px;
+    color: #ffffff; font: 800 32px 'Space Grotesk', sans-serif;
+    letter-spacing: -0.5px; text-transform: uppercase;
 }
 .wf-cover-topline {
-    position: absolute; z-index: 2; top: 12px; left: 14px; right: 14px;
+    position: absolute; z-index: 2; top: 16px; left: 24px; right: 24px;
     display: flex; justify-content: space-between;
-    color: #697868; font-size: 8px; font-weight: 700; letter-spacing: 1px;
+    color: #999999; font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 800; letter-spacing: 2px;
 }
 
 /* ── Activity Timeline ─────────────────────────────────────── */
 .wf-activity {
     display: grid; grid-template-columns: 60px 18px 1fr;
-    gap: 10px; padding: 13px 0; position: relative;
+    gap: 12px; padding: 14px 0; position: relative;
 }
-.wf-activity + .wf-activity { border-top: 1px solid #f3f5f1; }
+.wf-activity + .wf-activity { border-top: 1px solid #e5e5e5; }
 .wf-activity-time {
-    padding-top: 3px; color: #929b91;
-    font-size: 10px; font-weight: 500; text-align: right;
+    padding-top: 2px; color: #000000;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 11px; font-weight: 700; text-align: right;
 }
 .wf-activity-marker {
     display: flex; justify-content: center; position: relative;
 }
 .wf-dot {
-    z-index: 1; width: 10px; height: 10px; margin-top: 4px;
-    border: 2px solid #eff4ed; border-radius: 50%;
-    background: #7f9b80; box-shadow: 0 0 0 1px #afc0ae;
+    z-index: 1; width: 10px; height: 10px; margin-top: 5px;
+    border: 2px solid #ffffff; border-radius: 50%;
+    background: #000000; box-shadow: 0 0 0 2px #000000;
 }
-.wf-dot.dining { background: #d08b65; box-shadow: 0 0 0 1px #e3bca4; }
-.wf-dot.transport { background: #7b91a2; box-shadow: 0 0 0 1px #b2c2cd; }
-.wf-dot.stay { background: #9c86a8; box-shadow: 0 0 0 1px #c6b8ce; }
-.wf-dot.experience { background: #c3a450; box-shadow: 0 0 0 1px #dfcd8d; }
 .wf-activity-content { min-width: 0; }
 .wf-activity-header {
     display: flex; align-items: center; justify-content: space-between;
     gap: 8px; margin-bottom: 4px;
 }
 .wf-activity-header h4 {
-    margin: 0; color: #405045;
-    font: 600 12px 'Manrope', sans-serif; letter-spacing: -0.2px;
+    margin: 0; color: #000000;
+    font: 700 13px 'Space Grotesk', sans-serif; letter-spacing: -0.2px;
 }
 .wf-badge {
-    flex: 0 0 auto; border-radius: 12px; padding: 3px 8px;
-    font-size: 9px; font-weight: 600;
+    flex: 0 0 auto; border-radius: 3px; padding: 3px 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px; font-weight: 800; letter-spacing: 0.5px;
+    text-transform: uppercase; border: 1.5px solid #000000;
 }
-.wf-badge.sightseeing { background: #f0f4ed; color: #758974; }
-.wf-badge.dining { background: #fbf0e9; color: #ad7657; }
-.wf-badge.transport { background: #edf2f6; color: #708394; }
-.wf-badge.stay { background: #f2eef5; color: #877493; }
-.wf-badge.experience { background: #f7f2df; color: #968243; }
+.wf-badge.sightseeing { background: #000000; color: #ffffff; }
+.wf-badge.dining { background: #ffffff; color: #000000; }
+.wf-badge.transport { background: #f0f0f0; color: #000000; }
+.wf-badge.stay { background: #1a1a1a; color: #ffffff; }
+.wf-badge.experience { background: #ffffff; color: #000000; border-style: dashed; }
 .wf-activity-desc {
-    margin: 0 0 6px; color: #879087;
-    font-size: 11px; line-height: 1.6;
+    margin: 0 0 6px; color: #444444;
+    font-size: 12px; line-height: 1.6;
 }
 .wf-activity-meta {
     display: flex; justify-content: space-between; gap: 8px;
-    color: #9aa198; font-size: 10px;
+    color: #777777; font-size: 11px; font-weight: 500;
 }
 
 /* ── Stats Bar ─────────────────────────────────────────────── */
 .wf-stats {
     display: grid; grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid #eef0ec; border-bottom: 1px solid #eef0ec;
-    padding: 14px 0; margin: 14px 0;
+    border: 1.5px solid #000000;
+    background: #fafafa;
+    padding: 14px 0; margin: 16px 0;
 }
 .wf-stat {
-    display: flex; flex-direction: column; gap: 2px;
-    padding: 0 12px;
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 0 16px;
 }
-.wf-stat + .wf-stat { border-left: 1px solid #eff0ec; }
-.wf-stat-label { color: #a0a89f; font-size: 8px; font-weight: 700; letter-spacing: 0.5px; }
-.wf-stat-value { color: #536053; font-size: 11px; font-weight: 600; }
+.wf-stat + .wf-stat { border-left: 1.5px solid #000000; }
+.wf-stat-label {
+    color: #555555; font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px; font-weight: 800; letter-spacing: 1px;
+}
+.wf-stat-value {
+    color: #000000; font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px; font-weight: 800;
+}
 
 /* ── Saved Trip Cards ──────────────────────────────────────── */
 .wf-saved-card {
-    overflow: hidden; border: 1px solid #e9ece6; border-radius: 12px;
-    background: white; box-shadow: 0 4px 16px rgba(37,54,40,0.03);
-    transition: transform 0.16s, box-shadow 0.16s; margin-bottom: 8px;
+    overflow: hidden; border: 2px solid #000000; border-radius: 6px;
+    background: #ffffff; box-shadow: 4px 4px 0px #000000;
+    transition: transform 0.15s, box-shadow 0.15s; margin-bottom: 12px;
 }
 .wf-saved-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 25px rgba(37,54,40,0.08);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
 }
 .wf-saved-art {
     position: relative; height: 130px; overflow: hidden;
     display: flex; align-items: flex-end; justify-content: space-between;
-    padding: 12px; color: white;
+    padding: 14px; color: #ffffff; background: #000000;
+    border-bottom: 2px solid #000000;
 }
-.wf-saved-art::before, .wf-saved-art::after {
-    content: ""; position: absolute;
-    right: -20%; bottom: -55px; left: -20%; height: 120px;
-    border-radius: 50% 50% 0 0; background: rgba(83,112,86,0.44);
-}
-.wf-saved-art::after {
-    right: 15%; bottom: -80px; left: -25%;
-    background: rgba(55,87,65,0.48);
-}
+.wf-saved-art::before, .wf-saved-art::after { display: none; }
 .wf-saved-index {
-    position: absolute; top: 12px; left: 12px; z-index: 1;
-    font-size: 8px; letter-spacing: 1px; color: rgba(255,255,255,0.85);
+    position: absolute; top: 12px; left: 14px; z-index: 1;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
+    color: #999999;
 }
 .wf-saved-dest {
-    z-index: 1; font: 700 18px 'Manrope', sans-serif;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.2); text-transform: capitalize;
+    z-index: 1; font: 800 20px 'Space Grotesk', sans-serif;
+    text-transform: uppercase; letter-spacing: -0.5px;
     max-width: 85%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .wf-saved-body { padding: 14px; }
 .wf-saved-body h3 {
-    margin: 5px 0 4px; color: #3a493e;
-    font: 700 15px 'Manrope', sans-serif; text-transform: capitalize;
+    margin: 6px 0 4px; color: #000000;
+    font: 700 16px 'Space Grotesk', sans-serif; text-transform: uppercase;
 }
 .wf-saved-body p {
-    color: #889188; font-size: 10px; line-height: 1.6;
+    color: #555555; font-size: 11px; line-height: 1.6;
     display: -webkit-box; -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; overflow: hidden;
-    min-height: 28px; margin: 0 0 8px;
+    min-height: 32px; margin: 0 0 10px;
 }
-.wf-saved-date { color: #9ba39a; font-size: 9px; letter-spacing: 0.4px; }
+.wf-saved-date {
+    color: #777777; font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+}
 
 /* ── Summary Card ──────────────────────────────────────────── */
 .wf-summary-card {
-    border: 1px solid #e9ece6; border-radius: 12px;
-    background: white; box-shadow: 0 5px 20px rgba(37,54,40,0.03);
+    border: 2px solid #000000; border-radius: 8px;
+    background: #ffffff; box-shadow: 6px 6px 0px #000000;
     overflow: hidden;
 }
-.wf-summary-body { padding: 20px; }
+.wf-summary-body { padding: 22px; }
 .wf-trip-kicker {
-    color: #9ba399; font-size: 9px; font-weight: 700; letter-spacing: 1.2px;
+    color: #666666; font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
 }
 .wf-trip-title {
-    margin: 5px 0 6px; color: #2b3b31;
-    font: 700 24px 'Manrope', sans-serif; letter-spacing: -1px;
-    text-transform: capitalize;
+    margin: 6px 0 8px; color: #000000;
+    font: 800 28px 'Space Grotesk', sans-serif; letter-spacing: -1px;
+    text-transform: uppercase;
 }
 .wf-trip-summary {
-    color: #788378; font-size: 12px; line-height: 1.75; margin: 0;
+    color: #333333; font-size: 13px; line-height: 1.7; margin: 0;
 }
 
 /* ── Empty State ───────────────────────────────────────────── */
 .wf-empty {
     display: flex; flex-direction: column; align-items: center;
     justify-content: center; text-align: center;
-    min-height: 450px; border: 1px solid #e9ece6;
-    border-radius: 12px; background: #fbfcf9; padding: 30px;
+    min-height: 450px; border: 2px dashed #000000;
+    border-radius: 8px; background: #fafafa; padding: 30px;
 }
 .wf-empty-icon {
-    width: 56px; height: 56px; display: grid; place-items: center;
-    border-radius: 16px; background: #eaf0e8; color: #68826b;
-    font-size: 26px; margin-bottom: 16px;
+    width: 52px; height: 52px; display: grid; place-items: center;
+    border-radius: 6px; background: #000000; color: #ffffff;
+    font-size: 24px; margin-bottom: 16px;
 }
 .wf-empty h3 {
-    margin: 0 0 6px; color: #344238;
-    font: 700 18px 'Manrope', sans-serif;
+    margin: 0 0 6px; color: #000000;
+    font: 800 20px 'Space Grotesk', sans-serif; text-transform: uppercase;
 }
-.wf-empty p { color: #919a91; font-size: 12px; margin: 0; }
+.wf-empty p { color: #666666; font-size: 13px; margin: 0; }
 
 /* ── Footer ────────────────────────────────────────────────── */
 .wf-footer {
     display: flex; justify-content: space-between;
-    margin: 30px 0 0; color: #a5aba3;
-    font-size: 8px; letter-spacing: 0.75px;
+    margin: 36px 0 0; color: #888888;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 1px;
+    border-top: 1px solid #e5e5e5; padding-top: 16px;
 }
 
 /* ── Sparkle chip ──────────────────────────────────────────── */
 .wf-sparkle-chip {
     display: inline-flex; align-items: center; gap: 5px;
-    border: 1px solid #e7eee5; border-radius: 20px;
-    background: #f8faf6; padding: 5px 10px;
-    color: #728575; font-size: 10px;
+    border: 1.5px solid #000000; border-radius: 4px;
+    background: #ffffff; padding: 4px 10px;
+    color: #000000; font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* ── Endnote ───────────────────────────────────────────────── */
 .wf-endnote {
-    display: flex; align-items: center; gap: 10px;
-    margin: 16px 0 8px; color: #b1b7ae;
-    font-size: 8px; letter-spacing: 1px; text-align: center;
+    display: flex; align-items: center; gap: 12px;
+    margin: 24px 0 12px; color: #000000;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px; font-weight: 800; letter-spacing: 2px; text-align: center;
 }
-.wf-endnote-rule { height: 1px; flex: 1; background: #eef0ec; }
+.wf-endnote-rule { height: 1.5px; flex: 1; background: #000000; }
 
 /* ── Misc ──────────────────────────────────────────────────── */
 .wf-section-label {
-    color: #9ca49d; font-size: 10px; font-weight: 700; letter-spacing: 1.6px;
+    color: #000000; font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .wf-heading {
-    margin: 6px 0 0; color: #28372e;
-    font: 600 32px 'Manrope', sans-serif; letter-spacing: -1.7px;
+    margin: 6px 0 0; color: #000000;
+    font: 800 36px 'Space Grotesk', sans-serif; letter-spacing: -1.2px;
 }
 .wf-heading-accent {
-    color: #6f8a73; font-family: Georgia, serif;
-    font-size: 1.08em; font-style: italic;
-    font-weight: 400; letter-spacing: -1.9px;
+    color: #000000; font-family: 'Newsreader', Georgia, serif;
+    font-size: 1.1em; font-style: italic; font-weight: 400;
+    text-decoration: underline; text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
 }
-.wf-page-intro { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
-.wf-divider { height: 1px; background: #f0f1ed; margin: 18px 0; }
+.wf-page-intro { color: #555555; font-size: 14px; margin: 4px 0 0; }
+.wf-divider { height: 1.5px; background: #000000; margin: 20px 0; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -789,10 +834,10 @@ _CATEGORY_CLASS = {
 }
 
 _GRADIENT_PRESETS = [
-    "linear-gradient(140deg, #e3e9dd, #b7c4ad 62%, #839985)",
-    "linear-gradient(145deg, #f0d7b8, #c68f71 65%, #7f8b73)",
-    "linear-gradient(145deg, #dce9e9, #90aca4 60%, #647d74)",
-    "linear-gradient(145deg, #eaded1, #ad9b86 60%, #63756c)",
+    "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)",
+    "linear-gradient(135deg, #141414 0%, #2b2b2b 100%)",
+    "linear-gradient(135deg, #222222 0%, #0d0d0d 100%)",
+    "linear-gradient(135deg, #050505 0%, #1c1c1c 100%)",
 ]
 
 
@@ -1180,13 +1225,13 @@ def _render_empty_state():
     st.markdown(
         """
         <div class="wf-empty">
-            <div class="wf-empty-icon">✳</div>
+            <div class="wf-empty-icon">✦</div>
             <h3>Your story starts here</h3>
             <p>Tell us where you're headed, and we'll take it from there.</p>
-            <div style="display:flex; gap:20px; margin-top:28px; color:#89928a; font-size:10px;">
-                <span><strong style="color:#a6b4a6; margin-right:4px;">01</strong> Made for your pace</span>
-                <span><strong style="color:#a6b4a6; margin-right:4px;">02</strong> Days that flow naturally</span>
-                <span><strong style="color:#a6b4a6; margin-right:4px;">03</strong> Room for the unexpected</span>
+            <div style="display:flex; gap:20px; margin-top:28px; color:#555555; font-size:11px;">
+                <span><strong style="color:#000000; margin-right:4px;">01</strong> Made for your pace</span>
+                <span><strong style="color:#000000; margin-right:4px;">02</strong> Days that flow naturally</span>
+                <span><strong style="color:#000000; margin-right:4px;">03</strong> Room for the unexpected</span>
             </div>
         </div>
         """,
@@ -1214,20 +1259,18 @@ def _render_itinerary():
         f"""
         <div class="wf-summary-card">
             <div class="wf-cover">
-                <div class="wf-cover-sun"></div>
-                <div class="wf-cover-hill wf-cover-hill-back"></div>
-                <div class="wf-cover-hill wf-cover-hill-front"></div>
-                <div class="wf-cover-water"></div>
+                <div class="wf-cover-grid"></div>
+                <div class="wf-cover-circle"></div>
                 <span class="wf-cover-label">{dest}</span>
                 <div class="wf-cover-topline">
-                    <span>✨ YOUR JOURNEY, COMPOSED</span>
+                    <span>✦ YOUR JOURNEY, COMPOSED</span>
                     <span>01 / {str(num_days).zfill(2)}</span>
                 </div>
             </div>
             <div class="wf-summary-body">
                 <span class="wf-trip-kicker">A LITTLE GETAWAY TO</span>
                 <h2 class="wf-trip-title">{dest}</h2>
-                <div style="display:flex; align-items:center; gap:6px; color:#8a948a; font-size:11px; margin-bottom:10px;">
+                <div style="display:flex; align-items:center; gap:6px; color:#555555; font-size:11px; font-weight:600; margin-bottom:10px;">
                     📅 {date_label} · {num_days} {"day" if num_days == 1 else "days"}
                 </div>
                 <p class="wf-trip-summary">{itin.get("trip_summary", "")}</p>
