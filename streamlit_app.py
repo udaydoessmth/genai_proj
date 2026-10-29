@@ -1,5 +1,5 @@
 """
-Wayfarer — AI Travel Itinerary Planner
+ATLAS — AI Travel Itinerary Planner
 Streamlit deployment with Supabase auth/storage and Gemini AI.
 """
 
@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field, model_validator, ValidationError
 # Page configuration
 # ─────────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Wayfarer — AI Travel Planner",
+    page_title="ATLAS — AI Travel Planner",
     page_icon="🧭",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -630,7 +630,7 @@ def _sign_out():
 # Gemini service
 # ─────────────────────────────────────────────────────────────────────
 _SYSTEM_PROMPT = (
-    "You are Wayfarer, a careful travel-planning assistant. Return only a JSON "
+    "You are ATLAS, an expert travel architect and planning assistant. Return only a JSON "
     "object matching the supplied JSON schema. Give practical suggestions and "
     "honestly label all prices and opening-hour details as estimates; never "
     "claim live availability or verified opening hours. Group each day's "
@@ -889,11 +889,11 @@ def _render_config_error(missing: list[str]):
         <div class="wf-auth-card">
             <div class="wf-brand">
                 <span class="wf-brand-mark">🧭</span>
-                wayfarer<span class="wf-brand-period">.</span>
+                ATLAS<span class="wf-brand-period">.</span>
             </div>
             <div class="wf-eyebrow"><span class="wf-eyebrow-line"></span> SETUP REQUIRED</div>
             <h1>Almost there.</h1>
-            <p>Add the following secrets to deploy Wayfarer.</p>
+            <p>Add the following secrets to deploy ATLAS.</p>
         </div>
         </div>
         """,
@@ -928,7 +928,7 @@ def _render_auth_page():
             <div style="text-align:center; margin-bottom: 10px;">
                 <div class="wf-brand" style="justify-content:center;">
                     <span class="wf-brand-mark">🧭</span>
-                    wayfarer<span class="wf-brand-period">.</span>
+                    ATLAS<span class="wf-brand-period">.</span>
                 </div>
                 <div class="wf-eyebrow" style="justify-content:center;">
                     <span class="wf-eyebrow-line"></span> YOUR JOURNEY, YOURS
@@ -1020,7 +1020,7 @@ def _render_sidebar():
         st.markdown(
             '<div class="wf-brand">'
             '<span class="wf-brand-mark">🧭</span>'
-            'wayfarer<span class="wf-brand-period">.</span>'
+            'ATLAS<span class="wf-brand-period">.</span>'
             "</div>",
             unsafe_allow_html=True,
         )
@@ -1502,7 +1502,7 @@ def _load_saved_trip(trip: dict):
 def _render_footer():
     st.markdown(
         '<div class="wf-footer">'
-        "<span>WAYFARER © 2026</span>"
+        "<span>ATLAS © 2026</span>"
         "<span>Made for the journey, not just the destination.</span>"
         "<span>YOUR WORLD, WELL WANDERED</span>"
         "</div>",
